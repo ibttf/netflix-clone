@@ -3,7 +3,7 @@ import "./App.css";
 const Navbar = () => {
   return (
     <div id="Navbar">
-      <ul className="navbar-left">
+      <ul className="navbar navbar-left">
         <img
           className="logo"
           src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
@@ -14,7 +14,7 @@ const Navbar = () => {
         <li className="navbar-button">New & Popular</li>
         <li className="navbar-button">My List</li>
       </ul>
-      <ul className="navbar-right">
+      <ul className="navbar navbar-right">
         <li className="navbar-button">Search</li>
         <li className="navbar-button">Notifications</li>
         <li className="navbar-button">User</li>
