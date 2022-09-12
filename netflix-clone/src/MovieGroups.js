@@ -3,7 +3,8 @@ import TrendingMovies from "./MovieLists/TrendingMovies";
 
 const MovieGroups = ({ apiKey }) => {
   return (
-    <div>
+    <div id="MovieGroups">
+      <h2 className="movie-group-classifier">Trending Movies</h2>
       <TrendingMovies apiKey={apiKey}></TrendingMovies>
     </div>
   );
