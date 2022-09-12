@@ -1,5 +1,8 @@
 #App {
   overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+  background-color: rgb(14, 13, 13);
 }
 
 /****************/
@@ -25,7 +28,7 @@
 .navbar {
   list-style-type: none;
   margin: 0;
-  padding: 0 0 0 25px;
+  padding: 0 0 0 20px;
   color: white;
 }
 .logo {
@@ -34,7 +37,7 @@
 .navbar-button {
   display: inline;
   padding-right: 1%;
-  padding-left: 2%;
+  padding-left: 1%;
   font-size: 14px;
   position: relative;
   bottom: 9px;
@@ -45,7 +48,7 @@
 }
 .navbar-right {
   display: inline;
-  margin-left: 45%;
+  margin-left: 50%;
 }
 
 /****************/
@@ -55,14 +58,15 @@
   position: relative;
   z-index: -1;
   bottom: 25px;
-  height: 100%;
   color: white;
+  background-color: rgb(14, 13, 13);
+  height: fit-content;
 }
 .hero-image {
-  height: 1300px;
+  height: 1100px;
   overflow-y: hidden;
   position: relative;
-  bottom: 300px;
+  bottom: 40px;
   z-index: -1;
 }
 
@@ -109,27 +113,39 @@
 /****************/
 /* MOVIE POSTERS */
 /****************/
+#MovieGroups {
+  background-color: rgb(14, 13, 13);
+}
+
+.movie-group-classifier {
+  color: rgb(221, 219, 219);
+  padding-left: 3%;
+  font-size: 30px;
+}
+
 .trending-container {
-  display: flex;
+  display: inline-flex;
   padding: 0 55px;
   height: 200px;
 }
-.trending-container:hover .movie-poster-img {
+.trending-container:hover .movie-poster {
   transform: translateX(-25%);
 }
-.movie-poster-img:hover ~ .movie-poster {
+
+.movie-poster {
+  text-align: center;
+  margin: 0 2px;
+  transition: transform 300ms ease 100ms;
+}
+.movie-poster:hover ~ .movie-poster {
   transform: translateX(25%);
 }
-.movie-poster-img:hover {
+.movie-poster:hover {
   transform: scale(1.5) !important;
 }
 
 .movie-poster-img {
   height: 200px;
-  flex: 0 0 19.7%;
-  text-align: center;
-  margin: 0 2px;
-  transition: transform 300ms ease 100ms;
 }
 
 /****************/
