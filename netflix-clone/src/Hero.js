@@ -8,7 +8,7 @@ function Hero({ apiKey }) {
   const [image, setImage] = useState("");
   const [id, setId] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
-
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
@@ -16,18 +16,8 @@ function Hero({ apiKey }) {
       .then((data) => data.json())
       .then((movies) => {
         const random = parseInt(Math.random() * movies.results.length - 1);
-        console.log(
-          movies,
-          movies.results[random],
-          movie,
-          movie.title,
-          movie.overview,
-          movie.popularity,
-          movie.backdrop_path,
-          movie.release_date,
-          movie.id
-        );
         setMovie(movies.results[random]);
+        console.log(movies.results[random], movie);
         setTitle(movie.title);
         setDescription(movie.overview);
         setPopularity(movie.popularity);
@@ -35,9 +25,16 @@ function Hero({ apiKey }) {
         setImage(movie.backdrop_path);
         setReleaseDate(movie.release_date);
         setId(movie.id);
-        console.log(12);
+        checkIsLoaded();
       });
-  }, []);
+  }, [isLoaded]);
+
+  function checkIsLoaded() {
+    console.log("this is from the function " + movie);
+    if (movie.length === 0) {
+      setIsLoaded(!isLoaded);
+    }
+  }
 
   return (
     <div id="Hero">
