@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
 
-
 function TrendingMovies({ apiKey }) {
   //genres they have for movies:
   //Action, adventure,animation,comedy, crime,documentary,drama,family,fantasy,history,horror,music,mystery,romance,science fiction, tv movie, thriller, war, western
@@ -34,7 +33,6 @@ https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page
             name={movie.title}
             image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           ></MovieItem>
-          
         );
       })}
     </div>
