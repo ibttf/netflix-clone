@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
 
 
-function TrendingMovies({ apiKey }) {
+function AdventureMovie({ apiKey }) {
   //genres they have for movies:
-  //Action, adventure,animation,comedy, crime,documentary,drama,family,fantasy,history,horror,music,mystery,romance,science fiction, tv movie, thriller, war, western
+  // adventure,animation,comedy, crime,documentary,drama,family,fantasy,history,horror,music,mystery,romance,science fiction, tv movie, thriller, war, western
   const [movieList, setMovieList] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    fetch(`
-https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+    fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`)
       .then((data) => data.json())
       .then((popularMovies) => {
         setMovieList(popularMovies.results);
@@ -41,4 +40,4 @@ https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page
   );
 }
 
-export default TrendingMovies;
+export default AdventureMovie;

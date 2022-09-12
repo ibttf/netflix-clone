@@ -45,7 +45,7 @@ function Hero({ apiKey }) {
           Play
         </button>
         <button className="more-info-button">
-          {" "}
+          {""}
           <FontAwesomeIcon icon={faCircleInfo} className="icon" />
           More Info
         </button>
