@@ -1,12 +1,10 @@
 import React from "react";
-import PopularMovies from "./MovieLists/PopularMovies";
 import TrendingMovies from "./MovieLists/TrendingMovies";
 
-const MovieGroups = () => {
+const MovieGroups = ({ apiKey }) => {
   return (
     <div>
-      <PopularMovies></PopularMovies>
-      <TrendingMovies></TrendingMovies>
+      <TrendingMovies apiKey={apiKey}></TrendingMovies>
     </div>
   );
 };
