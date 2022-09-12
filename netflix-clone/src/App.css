@@ -109,6 +109,9 @@
   border-radius: 6px;
   border: none;
 }
+.more-info-button:hover {
+  background-color: rgb(196, 196, 196);
+}
 
 /****************/
 /* MOVIE POSTERS */
