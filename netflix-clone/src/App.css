@@ -1,5 +1,5 @@
-#Hero {
-  background-color: none;
+#App {
+  overflow-x: hidden;
 }
 
 /****************/
@@ -43,8 +43,6 @@ li {
   z-index: -1;
   bottom: 25px;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
   color: white;
 }
 .hero-image {
