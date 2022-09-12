@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import MovieGroups from "./MovieGroups";
 
 function App() {
+  const apiKey = "e738b0c021bcb38d799382dd3f2f81d6";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      <Navbar> </Navbar>
+      <Hero apiKey={apiKey}> </Hero>
+      <MovieGroups></MovieGroups>
     </div>
   );
 }
