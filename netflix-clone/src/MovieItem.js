@@ -4,7 +4,6 @@ function MovieItem({ name, image }) {
   const [flip, setFlip] = useState(false);
   function handleClick() {
     setFlip(!flip);
-    console.log("hi");
   }
   return (
     <div color="#0000" className="movie-poster">
