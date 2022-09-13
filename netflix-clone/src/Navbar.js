@@ -7,7 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
-const Navbar = () => {
+import Search from "./Search";
+const Navbar = ({onChanges,}) => {
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
@@ -32,8 +33,10 @@ const Navbar = () => {
           <li className="navbar-button">My List</li>
         </ul>
         <ul className="navbar navbar-right">
-          <li className="navbar-button">
+          <li className="navbar-button"> 
+          <li className="navbar-button"><Search onChanges={onChanges} ></Search></li>
             <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" />
+            
           </li>
           <li className="navbar-button">
             <FontAwesomeIcon icon={faBell} className="navbar-icon" />

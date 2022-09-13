@@ -42,6 +42,7 @@ function MovieList({ link }) {
             <MovieItem
               key={movie.id}
               name={movie.title}
+              overview={movie.overview}
               image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             ></MovieItem>
           );

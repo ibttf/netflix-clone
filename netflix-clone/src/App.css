@@ -35,7 +35,8 @@ nav.sticky {
   background-image: linear-gradient(
     to top,
     rgba(255, 0, 0, 0),
-    rgba(0, 0, 0, 255)
+    rgba(0, 0, 0, 255),
+    
   );
 }
 .navbar {
@@ -49,11 +50,11 @@ nav.sticky {
 }
 .navbar-button {
   display: inline;
-  padding-right: 1%;
-  padding-left: 1%;
+  padding-right: 2%;
+  padding-left: 2%;
   font-size: 14px;
   position: relative;
-  bottom: 9px;
+  bottom: 10px;
 }
 
 .navbar-left {
@@ -61,10 +62,11 @@ nav.sticky {
 }
 .navbar-right {
   display: inline;
-  margin-left: 56%;
+  margin-left: 50%;
 }
 .navbar-icon {
   font-size: 20px;
+  width: 5%;
 }
 
 /****************/
@@ -182,25 +184,35 @@ span {
   height: 200px;
   transform: translateX(0%);
   transition: 0.3s;
+  
 }
 
 .slider-right {
-  transform: translateX(-60%);
+  transform: translateX(-40%);cursor: pointer;
 }
 
 .slider-left {
-  transform: translateX(0%);
+  transform: translateX(0%);cursor: pointer;
 }
 
 .slider:hover .movie-poster {
   transform: translateX(-25%);
 }
 .movie-poster {
-  text-align: center;
-  margin: 0 2px;
-  padding: 0 5px;
-  transition: transform 300ms ease 100ms;
+  width: 150px;
+  height: 150px;
+  margin-right:5px ;
+  background-color: var(--main-color);
+  overflow: visible;
+  cursor: pointer;
+  color: white;
+  transition:0.5s,
+  
+  
 }
+
+
+
 .movie-poster:hover ~ .movie-poster {
   transform: translateX(25%);
 }
@@ -209,8 +221,30 @@ span {
 }
 
 .movie-poster-img {
-  height: 200px;
+  width: 100px;
+  height: 100%;
+  
 }
+.movie-poster-img2{
+  width: 100px;
+  height: 100%;
+  
+}
+.scrollski{
+width: 150px;
+height: 45px;
+
+background-color: var(--main-color);
+overflow: scroll;
+cursor: pointer;
+color: white;
+transition:0.5s,
+
+
+}
+
+ 
+
 
 /****************/
 /* FOOTER */
@@ -260,3 +294,4 @@ span {
   padding-left: 3%;
   padding-top: 2%;
 }
+
