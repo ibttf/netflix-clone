@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 
 function MovieItem({ name, image }) {
-  const [flip, setFlip] = useState(false);
-
-  function handleClick() {
-    setFlip(!flip);
+  const [isHovering, setIsHovering] = useState(true);
+  function handleHover() {
+    setIsHovering(!isHovering);
   }
   return (
-    <div color="#0000" className="movie-poster">
-      {flip === false ? (
+    <div className="movie-poster">
+      {isHovering ? (
         <img
-          onClick={handleClick}
-          className="movie-poster-img"
+          className={`movie-poster-img`}
           src={image}
+          onMouseOver={handleHover}
         ></img>
       ) : (
-        <h1 onClick={handleClick} style={{ color: "white" }} className="card">
-          {name}
-        </h1>
+        <div className="hovering-card" onMouseOut={handleHover}>
+          <img src={image} className="movie-poster-img-hovering"></img>
+          <p className="hovering-card-text">{name}</p>
+        </div>
       )}
     </div>
   );

@@ -210,6 +210,27 @@ span {
 
 .movie-poster-img {
   height: 200px;
+  border-radius: 5px;
+}
+
+.hovering-card {
+  border: 0px solid;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(13, 13, 13);
+  box-shadow: 5px 15px 20px black;
+  transform: translateY(-20%);
+}
+
+.movie-poster-img-hovering {
+  height: 200px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.hovering-card-text {
+  color: white;
+  font-size: 10px;
 }
 
 /****************/
