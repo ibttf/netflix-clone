@@ -5,7 +5,6 @@ function MovieList({ link }) {
   const [movieList, setMovieList] = useState([]);
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
     fetch(link)
       .then((data) => data.json())
