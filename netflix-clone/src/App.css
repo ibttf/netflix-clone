@@ -115,7 +115,7 @@ nav.sticky {
   border: none;
 }
 .play-button:hover {
-  background-color: grey;
+  background: rgba(255, 255, 255, 90%);
 }
 .more-info-button {
   font-size: 25px;
@@ -127,7 +127,7 @@ nav.sticky {
   border: none;
 }
 .more-info-button:hover {
-  background-color: rgb(196, 196, 196);
+  background: rgba(46, 46, 46, 90%);
 }
 
 /****************/
