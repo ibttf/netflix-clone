@@ -41,8 +41,7 @@ function MovieList({ link, handleAddMyList }) {
           return (
             <MovieItem
               key={movie.id}
-              name={movie.title}
-              image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              movie={movie}
               handleAddMyList={handleAddMyList}
             ></MovieItem>
           );

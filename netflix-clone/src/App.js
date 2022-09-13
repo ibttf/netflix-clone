@@ -14,16 +14,17 @@ function App() {
 
   const apiKey = "e738b0c021bcb38d799382dd3f2f81d6";
 
-  function handleAddMyList (e) {
-    
+  function handleAddMyList (movie) {
+    setMyList([...myList, movie])
   }
+  console.log(myList)
 
   return (
     <div id="App">
       <Navbar />
       <Switch>
         <Route exact path="/">
-          <Home apiKey={apiKey} setMyList={setMyList} />
+          <Home apiKey={apiKey} handleAddMyList={handleAddMyList} />
         </Route>
         <Route exact path="/mylist">
           <MyList myList={myList} />
