@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
 
-function MovieList({ link }) {
+function MovieList({ link, handleAddMyList }) {
   const [movieList, setMovieList] = useState([]);
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
@@ -43,6 +43,7 @@ function MovieList({ link }) {
               key={movie.id}
               name={movie.title}
               image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              handleAddMyList={handleAddMyList}
             ></MovieItem>
           );
         })}

@@ -56,12 +56,23 @@ nav.sticky {
   bottom: 9px;
 }
 
+.navbar-search-hidden {
+  visibility: hidden;
+  display: inline;
+  margin-left: 45%;
+}
+
+.navbar-search {
+  display: inline;
+  margin-left: 45%;
+}
+
 .navbar-left {
   display: inline;
 }
 .navbar-right {
   display: inline;
-  margin-left: 56%;
+  margin-left: 0%;
 }
 .navbar-icon {
   font-size: 20px;
@@ -210,6 +221,16 @@ span {
 
 .movie-poster-img {
   height: 200px;
+}
+
+/****************/
+/* MYLIST */
+/****************/
+
+.mylist {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white
 }
 
 /****************/

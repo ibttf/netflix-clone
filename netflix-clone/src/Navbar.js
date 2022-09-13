@@ -5,10 +5,16 @@ import {
   faUser,
   faBell,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom"
 
 import "./App.css";
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+
+  function handleSearchClick () {
+    setIsSearching(!isSearching);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,17 +30,21 @@ const Navbar = () => {
           <img
             className="logo"
             src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
-          ></img>
-          <li className="navbar-button">Home</li>
+            alt="Netflix Logo"
+          />
+          <NavLink to="/" className="navbar-button">Home</NavLink>
           <li className="navbar-button">TV Shows</li>
           <li className="navbar-button">Movies</li>
           <li className="navbar-button">New & Popular</li>
-          <li className="navbar-button">My List</li>
+          <NavLink to="/mylist" className="navbar-button">My List</NavLink>
+        </ul>
+        <ul className={isSearching ? "navbar-search" : "navbar-search-hidden"}>
+          <input />
         </ul>
         <ul className="navbar navbar-right">
-          <li className="navbar-button">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" />
-          </li>
+          <NavLink to="/search" className="navbar-button">
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" onClick={handleSearchClick} />
+          </NavLink>
           <li className="navbar-button">
             <FontAwesomeIcon icon={faBell} className="navbar-icon" />
           </li>

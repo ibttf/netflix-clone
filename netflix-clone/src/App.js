@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
 import Navbar from "./Navbar";
-import Hero from "./Hero";
-import MovieGroups from "./MovieGroups";
+import Home from "./Home";
+import MyList from "./MyList";
+import Search from "./Search";
 import Footer from "./Footer";
 
 function App() {
+  const [myList, setMyList] = useState([])
+
   const apiKey = "e738b0c021bcb38d799382dd3f2f81d6";
+
+  function handleAddMyList (e) {
+    
+  }
 
   return (
     <div id="App">
-      <Navbar> </Navbar>
-      <Hero apiKey={apiKey}> </Hero>
-      <MovieGroups apiKey={apiKey}></MovieGroups>
-      <Footer></Footer>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home apiKey={apiKey} setMyList={setMyList} />
+        </Route>
+        <Route exact path="/mylist">
+          <MyList myList={myList} />
+        </Route>
+        <Route>
+          <Search exact path="/search" />
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function MovieItem({ name, image }) {
+function MovieItem({ name, image, handleAddMyList }) {
   const [flip, setFlip] = useState(false);
 
   function handleClick() {
@@ -13,12 +13,14 @@ function MovieItem({ name, image }) {
           onClick={handleClick}
           className="movie-poster-img"
           src={image}
-        ></img>
+          alt="No Poster Available"
+        />
       ) : (
         <h1 onClick={handleClick} style={{ color: "white" }} className="card">
           {name}
         </h1>
       )}
+      <button onClick={handleAddMyList}>+</button>
     </div>
   );
 }
