@@ -3,6 +3,9 @@
   z-index: 0;
   background-color: rgb(14, 13, 13);
 }
+.hidden {
+  display: none;
+}
 
 /****************/
 /* ICONS */
@@ -58,7 +61,10 @@ nav.sticky {
 }
 .navbar-right {
   display: inline;
-  margin-left: 50%;
+  margin-left: 56%;
+}
+.navbar-icon {
+  font-size: 20px;
 }
 
 /****************/
@@ -72,8 +78,9 @@ nav.sticky {
   background-color: rgb(14, 13, 13);
 }
 .hero-image {
-  max-height: 100%;
+  min-height: 100%;
   max-width: 100%;
+  min-width: 100%;
   overflow-y: hidden;
   position: relative;
   bottom: 40px;
@@ -127,8 +134,8 @@ nav.sticky {
 /* MOVIE POSTERS */
 /****************/
 #MovieGroups {
-  overflow-x: hidden;
   background-color: rgb(14, 13, 13);
+  overflow: hidden;
 }
 
 .movie-group-classifier {
@@ -137,18 +144,61 @@ nav.sticky {
   font-size: 30px;
 }
 
-.trending-container {
+.container {
   display: inline-flex;
-  padding: 0 55px;
-  height: 200px;
 }
-.trending-container:hover .movie-poster {
-  transform: translateX(-25%);
+.handle {
+  height: 200px;
+  width: 55px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  transition: 0.1s;
+}
+.handle:hover {
+  opacity: 70%;
+  background-color: rgb(14, 13, 13);
+  transform: scale(1.2);
 }
 
+span {
+  transform: scaleY(4);
+}
+.left-handle {
+  left: 0;
+}
+.right-handle {
+  right: 0;
+}
+
+.slider {
+  display: flex;
+  padding: 0 55px;
+  height: 200px;
+  transform: translateX(0%);
+  transition: 0.3s;
+}
+
+.slider-right {
+  transform: translateX(-60%);
+}
+
+.slider-left {
+  transform: translateX(0%);
+}
+
+.slider:hover .movie-poster {
+  transform: translateX(-25%);
+}
 .movie-poster {
   text-align: center;
   margin: 0 2px;
+  padding: 0 5px;
   transition: transform 300ms ease 100ms;
 }
 .movie-poster:hover ~ .movie-poster {

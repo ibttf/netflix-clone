@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlass,
+  faUser,
+  faBell,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./App.css";
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -6,7 +13,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 0);
-      console.log(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,9 +32,15 @@ const Navbar = () => {
           <li className="navbar-button">My List</li>
         </ul>
         <ul className="navbar navbar-right">
-          <li className="navbar-button">Search</li>
-          <li className="navbar-button">Notifications</li>
-          <li className="navbar-button">User</li>
+          <li className="navbar-button">
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" />
+          </li>
+          <li className="navbar-button">
+            <FontAwesomeIcon icon={faBell} className="navbar-icon" />
+          </li>
+          <li className="navbar-button">
+            <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+          </li>
         </ul>
       </div>
     </nav>

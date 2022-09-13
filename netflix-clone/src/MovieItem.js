@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function MovieItem({ name, image }) {
   const [flip, setFlip] = useState(false);
+
   function handleClick() {
     setFlip(!flip);
   }
@@ -14,13 +15,9 @@ function MovieItem({ name, image }) {
           src={image}
         ></img>
       ) : (
-        <strong
-          onClick={handleClick}
-          style={{ color: "white" }}
-          className="card"
-        >
+        <h1 onClick={handleClick} style={{ color: "white" }} className="card">
           {name}
-        </strong>
+        </h1>
       )}
     </div>
   );

@@ -11,8 +11,11 @@ const MovieGroups = ({ apiKey }) => {
 
   return (
     <div id="MovieGroups">
-      <h2 className="movie-group-classifier">Trending Movies</h2>
+      <h3 className="movie-group-classifier">Trending Movies</h3>
       <MovieList link={trendingMovies}></MovieList>
+      <h3 className="movie-group-classifier">My List</h3>
+      {/* THE MOVIE LIST ISN'T AN ORDINARY ITEM; THIS IS PROBABLY GOING TO BE A JSON SERVER THAT WE CREATE OURSELVES */}
+      <MovieList></MovieList>
       <h3 className="movie-group-classifier">Movies Released This Year</h3>
       <MovieList link={recentMovies}></MovieList>
       <h3 className="movie-group-classifier">Adventure Movies</h3>
