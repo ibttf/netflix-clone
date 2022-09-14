@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function MovieItem({ movie, handleAddMyList }) {
   const [flip, setFlip] = useState(false);
+  const [added, setAdded] = useState(false);
+
+  function onAddMovie() {
+    handleAddMyList(movie)
+    setAdded(true)
+  }
 
   function handleClick() {
     setFlip(!flip);
@@ -20,7 +28,8 @@ function MovieItem({ movie, handleAddMyList }) {
           {movie.title}
         </h1>
       )}
-      <button onClick={handleAddMyList(movie)}>+</button>
+      <p className="movie-poster-info" >{<FontAwesomeIcon className="movie-poster-info" icon={faCircleInfo} />} More Info | </p>
+      <button className="movie-poster-info-dark" onClick={onAddMovie}>{added ? <FontAwesomeIcon className="movie-poster-info-dark" icon={faCheck} /> : "+"}</button>
     </div>
   );
 }

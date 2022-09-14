@@ -1,6 +1,8 @@
 function Search () {
     return (
-        <p>Hello</p>
+        <div className="searchBar">
+            <input />
+        </div>
     )
 }
 

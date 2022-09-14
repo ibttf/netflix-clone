@@ -38,9 +38,6 @@ const Navbar = () => {
           <li className="navbar-button">New & Popular</li>
           <NavLink to="/mylist" className="navbar-button">My List</NavLink>
         </ul>
-        <ul className={isSearching ? "navbar-search" : "navbar-search-hidden"}>
-          <input />
-        </ul>
         <ul className="navbar navbar-right">
           <NavLink to="/search" className="navbar-button">
             <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" onClick={handleSearchClick} />

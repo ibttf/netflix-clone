@@ -72,7 +72,7 @@ nav.sticky {
 }
 .navbar-right {
   display: inline;
-  margin-left: 0%;
+  margin-left: 50%;
 }
 .navbar-icon {
   font-size: 20px;
@@ -211,6 +211,7 @@ span {
   margin: 0 2px;
   padding: 0 5px;
   transition: transform 300ms ease 100ms;
+  background-color: black;
 }
 .movie-poster:hover ~ .movie-poster {
   transform: translateX(25%);
@@ -221,6 +222,18 @@ span {
 
 .movie-poster-img {
   height: 200px;
+}
+
+.movie-poster-info {
+  color: white;
+  font-family: Arial, sans-serif;
+  display: inline;
+}
+
+.movie-poster-info-dark {
+  color: black;
+  font-family: Arial, sans-serif;
+  display: inline;
 }
 
 /****************/
@@ -280,4 +293,14 @@ span {
   font-size: 11px;
   padding-left: 3%;
   padding-top: 2%;
+}
+
+/****************/
+/* SEARCH BAR */
+/****************/
+
+.searchBar {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

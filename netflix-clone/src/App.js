@@ -17,7 +17,6 @@ function App() {
   function handleAddMyList (movie) {
     setMyList([...myList, movie])
   }
-  console.log(myList)
 
   return (
     <div id="App">

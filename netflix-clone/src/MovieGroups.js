@@ -13,9 +13,7 @@ const MovieGroups = ({ apiKey, handleAddMyList }) => {
     <div id="MovieGroups">
       <h3 className="movie-group-classifier">Trending Movies</h3>
       <MovieList link={trendingMovies} handleAddMyList={handleAddMyList}></MovieList>
-      <h3 className="movie-group-classifier">My List</h3>
-      {/* THE MOVIE LIST ISN'T AN ORDINARY ITEM; THIS IS PROBABLY GOING TO BE A JSON SERVER THAT WE CREATE OURSELVES */}
-      <MovieList></MovieList>
+
       
       <h3 className="movie-group-classifier">Movies Released This Year</h3>
       <MovieList link={recentMovies} handleAddMyList={handleAddMyList}></MovieList>
