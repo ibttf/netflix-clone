@@ -99,6 +99,85 @@
       "video": false,
       "vote_average": 7.1,
       "vote_count": 498
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/21ldFAokKVjwzi1SHXoPb5gc7md.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 760104,
+      "original_language": "en",
+      "original_title": "X",
+      "overview": "In 1979, a group of young filmmakers set out to make an adult film in rural Texas, but when their reclusive, elderly hosts catch them in the act, the cast find themselves fighting for their lives.",
+      "popularity": 641.601,
+      "poster_path": "/A7YPhQKdcr6XB1kCUdS4tHifYWd.jpg",
+      "release_date": "2022-03-17",
+      "title": "X",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 915
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1Ds7xy7ILo8u2WWxdnkJth1jQVT.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35
+      ],
+      "id": 752623,
+      "original_language": "en",
+      "original_title": "The Lost City",
+      "overview": "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to the ancient city's lost treasure that featured in her latest story. Alan, determined to prove he can be a hero in real life and not just on the pages of her books, sets off to rescue her.",
+      "popularity": 679.583,
+      "poster_path": "/neMZH82Stu91d3iqvLdNQfqPPyl.jpg",
+      "release_date": "2022-03-24",
+      "title": "The Lost City",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 1897
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tTrZap8lEJsdpnab5yIR3d9bedg.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "id": 1010819,
+      "original_language": "en",
+      "original_title": "The Little Guy",
+      "overview": "Groot discovers a miniature civilization that believes the seemingly enormous tree toddler is the hero they’ve been waiting for.",
+      "popularity": 594.485,
+      "poster_path": "/lPzcizL8PdS2U1q0rfhlVn00b9l.jpg",
+      "release_date": "2022-08-10",
+      "title": "The Little Guy",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 108
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fQ5sZ6frXiAZuufgkVJnDwFFUQ4.jpg",
+      "genre_ids": [
+        53
+      ],
+      "id": 948333,
+      "original_language": "en",
+      "original_title": "Into the Deep",
+      "overview": "Follows a woman desperate to escape her town, she meets a stranger who promises a romantic escape, but it results in deceit, mistrust, and violence.",
+      "popularity": 595.148,
+      "poster_path": "/u4bDUBd6PJqP31u3KDiQBBtnaQs.jpg",
+      "release_date": "2022-08-26",
+      "title": "Into the Deep",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 11
     }
   ]
 }
