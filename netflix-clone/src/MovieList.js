@@ -5,7 +5,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
   const [movieList, setMovieList] = useState([]);
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
-  const [toggle, setToggle] = useState(false);
+
   useEffect(() => {
     fetch(link)
       .then((data) => data.json())

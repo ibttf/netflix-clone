@@ -20,32 +20,39 @@ function MovieItem({
     setIsHovering(!isHovering);
   }
 
-  function handleMyListClick() {
-    fetch("http://localhost:8000/movies", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(movie),
-    })
-      .then((data) => data.json())
-      .then((movie) => console.log(movie));
+  function handleMyListClick(e) {
+    if (e.currentTarget.className.includes("add")) {
+      fetch("http://localhost:8000/movies", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
+      }).then((data) => data.json());
+    } else {
+      fetch(`http://localhost:8000/movies/${movie.id}`, {
+        method: "DELETE",
+      }).then((data) => data.json());
+    }
   }
 
   const addDeleteIcon = renderAddDeleteButton();
+
   function renderAddDeleteButton() {
     if (inMyList) {
       //if it is already in the list
 
-      return faX;
+      return [faX, "delete-button"];
     } else {
       //if it is not already in the list
       if (isOutsideButInMyList) {
         //it's outside the list, but an element that you'd added to the list
-        return faX;
+
+        return [faX, "delete-button"];
       } else {
         //it's outside the list and you hadn't added it to the list yet
-        return faPlus;
+
+        return [faPlus, "add-button"];
       }
     }
   }
@@ -59,13 +66,16 @@ function MovieItem({
             <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>
           </button>
           <button
-            className="hovering-card-button add-to-list-button-hover"
-            onClick={() => {
-              handleMyListClick();
+            className={`hovering-card-button ${addDeleteIcon[1]}`}
+            onClick={(e) => {
+              handleMyListClick(e);
               onAddDeleteClick();
             }}
           >
-            <FontAwesomeIcon icon={addDeleteIcon}></FontAwesomeIcon>
+            <FontAwesomeIcon
+              icon={addDeleteIcon[0]}
+              className="adddelete-icon"
+            ></FontAwesomeIcon>
           </button>
           <button className="hovering-card-button angle-down-button-hover">
             <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>

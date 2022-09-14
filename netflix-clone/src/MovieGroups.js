@@ -17,7 +17,6 @@ const MovieGroups = ({ apiKey }) => {
     idArray.push(movie.id);
   }
   function flipToggle() {
-    console.log(toggle);
     setToggle(!toggle);
   }
 
