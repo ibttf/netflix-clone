@@ -5,7 +5,7 @@ import "./App.css";
 
 import Navbar from "./Navbar";
 import Home from "./Home";
-import MyList from "./MyList";
+import MyListPage from "./MyListPage";
 import Search from "./Search";
 import Footer from "./Footer";
 
@@ -18,7 +18,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/mylist">
-          <MyList />
+          <MyListPage />
         </Route>
         <Route exact path="/search">
           <Search />
