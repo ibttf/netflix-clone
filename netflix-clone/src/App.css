@@ -205,7 +205,7 @@ span {
   transform: translateX(25%);
 }
 .movie-poster:hover {
-  transform: scale(1.5) !important;
+  transform: scale(1.5) translateY(-20%) !important;
 }
 
 .movie-poster-img {
@@ -214,23 +214,46 @@ span {
 }
 
 .hovering-card {
-  border: 0px solid;
+  box-shadow: 5px 10px 18px black;
+  border: none;
   border-radius: 5px;
-  padding: 10px;
-  background-color: rgb(13, 13, 13);
-  box-shadow: 5px 15px 20px black;
-  transform: translateY(-20%);
+  padding-bottom: 5px;
+  background-color: rgb(14, 13, 13);
 }
-
-.movie-poster-img-hovering {
-  height: 200px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
 .hovering-card-text {
-  color: white;
   font-size: 10px;
+  color: white;
+
+  margin: 3px;
+}
+.hovering-card-button {
+  margin-right: 5%;
+  background-color: rgb(61, 57, 57);
+  color: white;
+  border: solid 1px rgb(61, 57, 57);
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 100%;
+}
+.hovering-card-button:hover {
+  opacity: 80%;
+}
+
+.play-button-hover {
+  background-color: white;
+  color: black;
+}
+
+.add-to-list-button-hover:hover {
+  border: solid 1px white !important;
+  opacity: 100% !important;
+}
+
+.angle-down-button-hover {
+  text-align: right;
+}
+.angle-down-button-hover:hover {
+  border: solid 1px white !important;
 }
 
 /****************/

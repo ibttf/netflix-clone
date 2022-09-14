@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MovieItem from "./MovieItem";
 
-function MovieList({ link, onAddDeleteClick, myList, ids }) {
-  const [movieList, setMovieList] = useState([]);
+function MyList({ onAddDeleteClick, movies, ids }) {
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
-  const [toggle, setToggle] = useState(false);
-  useEffect(() => {
-    fetch(link)
-      .then((data) => data.json())
-      .then((popularMovies) => {
-        setMovieList(popularMovies.results);
-      });
-  }, []);
 
   function handlePrevClick() {
     if (isNext) {
@@ -34,7 +25,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
         <span>&lt;</span>
       </div>
       <div className={isNext ? `slider slider-right` : `slider`}>
-        {movieList.map((movie) => {
+        {movies.map((movie) => {
           if (!movie.poster_path) {
             return;
           }
@@ -44,8 +35,8 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
               name={movie.title}
               movie={movie}
               image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              inMyList={false}
-              isOutsideButInMyList={ids.includes(movie.id)}
+              inMyList={true}
+              isOutsideButInMyList={false}
               onAddDeleteClick={onAddDeleteClick}
             ></MovieItem>
           );
@@ -58,4 +49,4 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
   );
 }
 
-export default MovieList;
+export default MyList;
