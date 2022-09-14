@@ -10,18 +10,20 @@ import Search from "./Search";
 import Footer from "./Footer";
 
 function App() {
+  const apiKey = "e738b0c021bcb38d799382dd3f2f81d6";
+
   return (
     <div id="App">
       <Navbar> </Navbar>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home apiKey={apiKey} />
         </Route>
         <Route exact path="/mylist">
           <MyListPage />
         </Route>
         <Route exact path="/search">
-          <Search />
+          <Search apiKey={apiKey}/>
         </Route>
       </Switch>
       <Footer></Footer>

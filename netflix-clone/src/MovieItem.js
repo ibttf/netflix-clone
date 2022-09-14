@@ -104,9 +104,10 @@ function MovieItem({
           <img src={image} className="movie-poster-img"></img>
           <p className="hovering-card-text">{name}</p>
           <div className="genres-container">
-            {movie.genre_ids.slice(0, 3).map((id) => {
+            {movie.genre_ids ? movie.genre_ids.slice(0, 3).map((id) => {
               return <p className="genre">{movieCODES[id]}</p>;
-            })}
+            }) : movie.genres.slice(0,3).map((obj) => {
+              return <p className="genre">{obj.name}</p>})}
           </div>
 
           <button className="hovering-card-button play-button-hover">
