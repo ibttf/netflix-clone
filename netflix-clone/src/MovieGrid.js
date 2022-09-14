@@ -1,9 +1,9 @@
 import MyMovieItem from "./MyMovieItem";
 
-function MovieGrid ({ movies }) {
+function MovieGrid ({ movieIds }) {
     return(
         <div>
-            {movies.map(movie => <MyMovieItem key={movie.id} movie={movie} />)}
+            {(movieIds) ? movieIds.map(movieId => <MyMovieItem key={movieId.id} movieId={movieId} />) : "Cannot Return Movies"}
         </div>
     )
 }
