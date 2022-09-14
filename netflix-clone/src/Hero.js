@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 function Hero({ apiKey }) {
   const [movie, setMovie] = useState([]);
@@ -10,6 +11,7 @@ function Hero({ apiKey }) {
   const [image, setImage] = useState("");
   const [ranking, setRanking] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+
 
   useEffect(() => {
     fetch(
@@ -40,10 +42,10 @@ function Hero({ apiKey }) {
         <h1 className="hero-title">{title}</h1>
         <h2 className="hero-description">{description}</h2>
         <h3 className="hero-description">#{ranking} in Movies Today</h3>
-        <button className="play-button">
+        <Link to="/moreinfo"  className="play-button">
           <FontAwesomeIcon icon={faPlay} className="icon" />
           Play
-        </button>
+          </Link>
         <button className="more-info-button">
           {""}
           <FontAwesomeIcon icon={faCircleInfo} className="icon" />

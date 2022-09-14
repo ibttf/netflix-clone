@@ -8,6 +8,7 @@ import Home from "./Home";
 import MyListPage from "./MyListPage";
 import Search from "./Search";
 import Footer from "./Footer";
+import Moreinfo from "./Moreinfo";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
         <Route exact path="/search">
           <Search />
         </Route>
+        <Route exact path="/moreinfo">
+    <Moreinfo/>
+        </Route>
       </Switch>
+
       <Footer></Footer>
     </div>
   );

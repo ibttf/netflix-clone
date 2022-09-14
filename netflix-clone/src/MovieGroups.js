@@ -84,6 +84,7 @@ const MovieGroups = ({ apiKey }) => {
         myList={myList}
         ids={idArray}
       ></MovieList>
+      
     </div>
   );
 };

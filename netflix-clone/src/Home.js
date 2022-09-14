@@ -10,6 +10,7 @@ function Home () {
         <div>
             <Hero apiKey={apiKey}> </Hero>
             <MovieGroups apiKey={apiKey}></MovieGroups>
+            
         </div>
     )
 }

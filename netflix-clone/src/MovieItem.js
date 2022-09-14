@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useHistory } from "react-router-dom"; 
 import {
   faPlay,
   faPlus,
@@ -14,6 +15,7 @@ function MovieItem({
   onAddDeleteClick,
   isOutsideButInMyList,
 }) {
+  
   const [isHovering, setIsHovering] = useState(false);
   const movieCODES = {
     28: "Action",
@@ -36,6 +38,11 @@ function MovieItem({
     10752: "War",
     37: "Western",
   };
+  const history=useHistory();
+  const addMore = () => {
+    history.push("/moreinfo")
+   };
+
 
   const tvCODES = {
     10759: "Action and Adventure",
@@ -101,7 +108,7 @@ function MovieItem({
     <div className="movie-poster">
       {isHovering ? (
         <div className="hovering-card" onMouseLeave={handleHover}>
-          <img src={image} className="movie-poster-img"></img>
+          <img src={image}  className="movie-poster-img"></img>
           <p className="hovering-card-text">{name}</p>
           <div className="genres-container">
             {movie.genre_ids.slice(0, 3).map((id) => {
@@ -124,7 +131,7 @@ function MovieItem({
               className="adddelete-icon"
             ></FontAwesomeIcon>
           </button>
-          <button className="hovering-card-button angle-down-button-hover">
+          <button onClick={addMore} className="hovering-card-button angle-down-button-hover">
             <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
           </button>
         </div>
