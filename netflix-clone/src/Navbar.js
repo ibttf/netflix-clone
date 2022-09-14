@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {NavLink} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -24,17 +25,18 @@ const Navbar = () => {
           <img
             className="logo"
             src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+            alt="Netflix Logo"
           ></img>
-          <li className="navbar-button">Home</li>
+          <NavLink exact to="/" className="navbar-button">Home</NavLink>
           <li className="navbar-button">TV Shows</li>
           <li className="navbar-button">Movies</li>
           <li className="navbar-button">New & Popular</li>
-          <li className="navbar-button">My List</li>
+          <NavLink exact to="/mylist" className="navbar-button">My List</NavLink>
         </ul>
         <ul className="navbar navbar-right">
-          <li className="navbar-button">
+          <NavLink exact to="/search" className="navbar-button">
             <FontAwesomeIcon icon={faMagnifyingGlass} className="navbar-icon" />
-          </li>
+          </NavLink>
           <li className="navbar-button">
             <FontAwesomeIcon icon={faBell} className="navbar-icon" />
           </li>
