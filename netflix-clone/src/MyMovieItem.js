@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
+import "./MyMovieItem.css";
 
 function MyMovieItem({ movieId }) {
   const [movie, setMovie] = useState({});
@@ -15,18 +16,14 @@ function MyMovieItem({ movieId }) {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(movie);
-
   return (
-    <div className="movie-card">
+    <div className="grid-item-container">
       {movie.status_code ? (
         <div></div>
       ) : (
-        <div className="myListText">
+        <div className="movie-item-container">
           <MovieItem
-            name={movie.title ? movie.title : movie.name}
-            movie={movie}
-            image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            movie={{ ...movieId }}
             inMyList={false}
             isOutsideButInMyList={false}
             onAddDeleteClick={() => {
@@ -35,7 +32,6 @@ function MyMovieItem({ movieId }) {
           />
         </div>
       )}
-      <p>{movie.overview}</p>
     </div>
   );
 }

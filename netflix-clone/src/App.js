@@ -23,7 +23,7 @@ function App() {
           <MyListPage />
         </Route>
         <Route exact path="/search">
-          <Search apiKey={apiKey}/>
+          <Search apiKey={apiKey} />
         </Route>
       </Switch>
       <Footer></Footer>

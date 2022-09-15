@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faPlus,
+  faPause,
   faAngleDown,
   faX,
   faThumbsUp,
@@ -59,9 +60,26 @@ function MovieItem({
     37: "Western",
   };
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  function handlePlay() {
+    fetch(`http://localhost:8000/movies/${movie.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        watched: !isPlaying,
+      }),
+    }).then((data) => data.json());
+    setIsPlaying(movie.watched);
+    console.log(isPlaying);
+    onAddDeleteClick();
+  }
+
   //will either send a post or delete request to take away/or add to my list
   function handleMyListClick(e) {
-    if (e.currentTarget.className.includes("add")) {
+    console.log(e.currentTarget);
+    if (e.currentTarget && e.currentTarget.className.includes("add")) {
       fetch("http://localhost:8000/movies", {
         method: "POST",
         headers: {
@@ -112,13 +130,21 @@ function MovieItem({
     }
     return faThumbsUp;
   }
+
+  function renderPlayPause() {
+    if (isPlaying) {
+      return faPause;
+    }
+    return faPlay;
+  }
+
   return (
     <div className="movie-poster">
       <img src={image} className="movie-poster-img"></img>
 
       <div className="display">
-        <button className="card-button play-button">
-          <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>
+        <button className="card-button play-button" onClick={handlePlay}>
+          <FontAwesomeIcon icon={renderPlayPause()}></FontAwesomeIcon>
         </button>
         <button
           className={`card-button ${
@@ -144,7 +170,7 @@ function MovieItem({
         <p className="match-percent">99% Match</p>
         <p className="movie-name">{name}</p>
         <div className="genres-container">
-          {movie.genre_ids
+          {movie.genre_ids !== undefined
             ? movie.genre_ids.slice(0, 3).map((id, index) => {
                 if (index !== movie.genre_ids.slice(0, 3).length - 1) {
                   return <p className="genre">{movieCODES[id] + " ● "}</p>;
