@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import MovieItem from "./MovieItem";
-
+import "./MovieList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLessThan, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 function MyList({ onAddDeleteClick, movies, ids }) {
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
@@ -20,13 +22,13 @@ function MyList({ onAddDeleteClick, movies, ids }) {
   }
 
   return (
-    <div className="container">
+    <div className="movie-list-container">
       <div className="handle left-handle" onClick={handlePrevClick}>
-        <span>&lt;</span>
+        <FontAwesomeIcon icon={faLessThan} />
       </div>
       <div className={isNext ? `slider slider-right` : `slider`}>
         {movies.map((movie) => {
-          if (!movie.poster_path) {
+          if (!movie.poster_path || !movie.backdrop_path) {
             return;
           }
           return (
@@ -43,7 +45,7 @@ function MyList({ onAddDeleteClick, movies, ids }) {
         })}
       </div>
       <div className="handle right-handle" onClick={handleNextClick}>
-        <span>&gt;</span>
+        <FontAwesomeIcon icon={faGreaterThan} />
       </div>
     </div>
   );

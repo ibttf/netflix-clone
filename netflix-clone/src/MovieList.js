@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
-
+import "./MovieList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLessThan, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 function MovieList({ link, onAddDeleteClick, myList, ids }) {
   const [movieList, setMovieList] = useState([]);
   const [isPrev, setIsPrev] = useState(false);
@@ -29,21 +31,19 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
   }
 
   return (
-    <div className="container">
+    <div className="movie-list-container">
       <div className="handle left-handle" onClick={handlePrevClick}>
-        <span>&lt;</span>
+        <FontAwesomeIcon icon={faLessThan} />
       </div>
       <div className={isNext ? `slider slider-right` : `slider`}>
         {movieList.map((movie) => {
-          if (!movie.poster_path) {
+          if (!movie.poster_path || !movie.backdrop_path) {
             return;
           }
           return (
             <MovieItem
               key={movie.id}
-              name={movie.title}
               movie={movie}
-              image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               inMyList={false}
               isOutsideButInMyList={ids.includes(movie.id)}
               onAddDeleteClick={onAddDeleteClick}
@@ -52,7 +52,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
         })}
       </div>
       <div className="handle right-handle" onClick={handleNextClick}>
-        <span>&gt;</span>
+        <FontAwesomeIcon icon={faGreaterThan} />
       </div>
     </div>
   );

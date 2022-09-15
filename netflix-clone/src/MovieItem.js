@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
+import "./MovieItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faPlus,
   faAngleDown,
   faX,
+  faThumbsUp,
+  faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons";
 function MovieItem({
-  name,
   movie,
-  image,
   inMyList,
   onAddDeleteClick,
   isOutsideButInMyList,
 }) {
-  const [isHovering, setIsHovering] = useState(false);
+  const name = movie.title ? movie.title : movie.name;
+  const image = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+
   const movieCODES = {
     28: "Action",
     12: "Adventure",
@@ -55,12 +58,9 @@ function MovieItem({
     10768: "War and Politics",
     37: "Western",
   };
-  function handleHover() {
-    setIsHovering(!isHovering);
-  }
 
+  //will either send a post or delete request to take away/or add to my list
   function handleMyListClick(e) {
-    console.log(movie);
     if (e.currentTarget.className.includes("add")) {
       fetch("http://localhost:8000/movies", {
         method: "POST",
@@ -75,8 +75,6 @@ function MovieItem({
       }).then((data) => data.json());
     }
   }
-
-  const addDeleteIcon = renderAddDeleteButton();
 
   function renderAddDeleteButton() {
     if (inMyList) {
@@ -97,45 +95,72 @@ function MovieItem({
     }
   }
 
+  function handleMoreInfoClick() {
+    //ADD THE POP UP HERE!!!
+    return;
+  }
+
+  const [isLiked, setIsLiked] = useState(false);
+
+  function handleLikeClick() {
+    setIsLiked(!isLiked);
+    //ADD THE PATCH REQUEST HERE OR DO SOMETHING WITH THIS
+  }
+  function renderLikeDislike() {
+    if (isLiked) {
+      return faThumbsDown;
+    }
+    return faThumbsUp;
+  }
   return (
     <div className="movie-poster">
-      {isHovering ? (
-        <div className="hovering-card" onMouseLeave={handleHover}>
-          <img src={image} className="movie-poster-img"></img>
-          <p className="hovering-card-text">{name}</p>
-          <div className="genres-container">
-            {movie.genre_ids ? movie.genre_ids.slice(0, 3).map((id) => {
-              return <p className="genre">{movieCODES[id]}</p>;
-            }) : movie.genres.slice(0,3).map((obj) => {
-              return <p className="genre">{obj.name}</p>})}
-          </div>
+      <img src={image} className="movie-poster-img"></img>
 
-          <button className="hovering-card-button play-button-hover">
-            <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>
-          </button>
-          <button
-            className={`hovering-card-button ${addDeleteIcon[1]}`}
-            onClick={(e) => {
-              handleMyListClick(e);
-              onAddDeleteClick();
-            }}
-          >
-            <FontAwesomeIcon
-              icon={addDeleteIcon[0]}
-              className="adddelete-icon"
-            ></FontAwesomeIcon>
-          </button>
-          <button className="hovering-card-button angle-down-button-hover">
-            <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
-          </button>
+      <div className="display">
+        <button className="card-button play-button">
+          <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>
+        </button>
+        <button
+          className={`card-button ${
+            renderAddDeleteButton()[1]
+          } handle-list-button`}
+          onClick={(e) => {
+            handleMyListClick(e);
+            onAddDeleteClick();
+          }}
+        >
+          <FontAwesomeIcon icon={renderAddDeleteButton()[0]}></FontAwesomeIcon>
+        </button>
+        <button className="card-button" onClick={handleLikeClick}>
+          <FontAwesomeIcon icon={renderLikeDislike()}></FontAwesomeIcon>
+        </button>
+
+        <button
+          className="card-button angle-down-button"
+          onClick={handleMoreInfoClick}
+        >
+          <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
+        </button>
+        <p className="match-percent">99% Match</p>
+        <p className="movie-name">{name}</p>
+        <div className="genres-container">
+          {movie.genre_ids
+            ? movie.genre_ids.slice(0, 3).map((id, index) => {
+                if (index !== movie.genre_ids.slice(0, 3).length - 1) {
+                  return <p className="genre">{movieCODES[id] + " ● "}</p>;
+                } else {
+                  return <p className="genre">{movieCODES[id]}</p>;
+                }
+              })
+            : movie.genres.slice(0, 3).map((obj, index) => {
+                if (index !== movie.genres.slice(0, 3).length - 1) {
+                  return <p className="genre">{obj.name + " ● "}</p>;
+                } else {
+                  return <p className="genre">{obj.name}</p>;
+                }
+              })}
         </div>
-      ) : (
-        <img
-          className={`movie-poster-img`}
-          src={image}
-          onMouseEnter={handleHover}
-        ></img>
-      )}
+      </div>
     </div>
   );
 }

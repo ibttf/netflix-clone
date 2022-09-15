@@ -1,0 +1,77 @@
+/****************/
+/* NAVBAR */
+/****************/
+#Navbar {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgba(0, 0, 0, 255)
+  );
+}
+nav {
+  transition: 0.3s;
+}
+nav.sticky {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+  color: white;
+  display: inline;
+}
+.logo {
+  width: 90px;
+  cursor: pointer;
+}
+.navbar-button {
+  display: inline;
+  padding-right: 1%;
+  padding-left: 1%;
+  font-size: 14px;
+  position: relative;
+  bottom: 9px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar-button:visited {
+  color: white;
+}
+.navbar-button:hover {
+  opacity: 90%;
+}
+
+.navbar-left {
+  display: inline;
+}
+.navbar-right {
+  display: inline;
+  margin-left: 55%;
+}
+.navbar-icon {
+  font-size: 20px;
+}
+
+.more-info {
+  font-size: 13px !important;
+}
+.active {
+  font-weight: bold;
+}
+.profile {
+  display: inline-block;
+  width: 1px;
+  padding-left: 0px;
+}
+
+.options {
+  display: none;
+}

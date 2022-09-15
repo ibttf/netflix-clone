@@ -1,0 +1,93 @@
+.movie-poster {
+  margin: 0 2px;
+  padding: 0 5px;
+  transition: transform 300ms ease 100ms;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+.movie-poster:hover {
+  transform: scale(1.3) translateY(-10%) !important;
+  z-index: 2;
+}
+
+.movie-poster-img {
+  height: 160px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.movie-poster:hover > .display {
+  height: 130px;
+  border-radius: 5px;
+  box-shadow: 1px 6px 15px 5px rgba(0, 0, 0, 0.8);
+}
+.display {
+  height: 0px;
+  overflow: hidden;
+  padding-top: 20px;
+  margin-top: -20px;
+  background-color: rgb(14, 13, 13);
+}
+.match-percent {
+  color: rgb(59, 177, 59);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 2%;
+}
+.movie-name {
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 0px;
+}
+.genres-container {
+  display: block;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  max-width: 100%;
+}
+.genre {
+  color: white;
+  font-size: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  display: inline;
+  padding: 0 5px 0px 5px;
+}
+
+.card-button {
+  position: relative;
+  margin: 1% 1%;
+  background-color: rgb(61, 57, 57);
+  color: white;
+  border: solid 1px rgb(61, 57, 57);
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 100%;
+}
+.angle-down-button {
+  float: right;
+}
+.card-button:hover {
+  opacity: 80%;
+}
+.card-button:active {
+  border: solid 2px white !important;
+}
+.play-button {
+  background-color: white;
+  color: black;
+}
+
+.handle-list-button:hover {
+  border: solid 1px white !important;
+  opacity: 100% !important;
+}
+
+.angle-down-button:hover {
+  border: solid 1px white !important;
+}

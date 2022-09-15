@@ -1,0 +1,14 @@
+.slider {
+  display: flex;
+  padding: 0px 55px;
+  height: 200px;
+  transition: 0.3s;
+}
+
+.slider-right {
+  transform: translateX(-20%);
+}
+
+.slider-left {
+  transform: translateX(0%);
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./MovieGroups.css";
 import MovieList from "./MovieList";
 import MyList from "./MyList";
 const MovieGroups = ({ apiKey }) => {
@@ -35,6 +36,7 @@ const MovieGroups = ({ apiKey }) => {
         myList={myList}
         ids={idArray}
       ></MovieList>
+
       <h3 className="movie-group-classifier">My List</h3>
       {/* THE MOVIE LIST ISN'T AN ORDINARY ITEM; THIS IS PROBABLY GOING TO BE A JSON SERVER THAT WE CREATE OURSELVES */}
       <MyList
@@ -42,6 +44,7 @@ const MovieGroups = ({ apiKey }) => {
         movies={myList}
         ids={idArray}
       ></MyList>
+
       <h3 className="movie-group-classifier">Movies Released This Year</h3>
       <MovieList
         onAddDeleteClick={flipToggle}
@@ -49,6 +52,7 @@ const MovieGroups = ({ apiKey }) => {
         myList={myList}
         ids={idArray}
       ></MovieList>
+
       <h3 className="movie-group-classifier">Adventure Movies</h3>
       <MovieList
         onAddDeleteClick={flipToggle}
