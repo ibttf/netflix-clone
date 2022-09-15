@@ -2,24 +2,41 @@
   "movies": [
     {
       "adult": false,
-      "backdrop_path": "/GZx3RAiTJAhXOdhLLyCAbqRl11.jpg",
+      "backdrop_path": "/5FFpcmPzD5mhLom7bymZq7Py8eT.jpg",
       "genre_ids": [
-        80,
-        53,
-        37
+        35
       ],
-      "id": 338766,
+      "id": 862551,
       "original_language": "en",
-      "original_title": "Hell or High Water",
-      "overview": "A divorced dad and his ex-con brother resort to a desperate scheme in order to save their family's farm in West Texas.",
-      "popularity": 19.059,
-      "poster_path": "/ljRRxqy2aXIkIBXLmOVifcOR021.jpg",
-      "release_date": "2016-08-11",
-      "title": "Hell or High Water",
+      "original_title": "Me Time",
+      "overview": "With his family away, a devoted stay-at-home dad enjoys his first me time in years by joining his hard-partying old friend on a wild birthday adventure.",
+      "popularity": 672.744,
+      "poster_path": "/bkjPoisqAavXUvtoirxTEcLLQyI.jpg",
+      "release_date": "2022-08-26",
+      "title": "Me Time",
       "video": false,
-      "vote_average": 7.3,
-      "vote_count": 3829,
-      "watched": false
+      "vote_average": 6,
+      "vote_count": 311
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3PieOs1t6dPHWlgvX3XoqTIQLqN.jpg",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "id": 507086,
+      "original_language": "en",
+      "original_title": "Jurassic World Dominion",
+      "overview": "Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.",
+      "popularity": 1753.842,
+      "poster_path": "/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg",
+      "release_date": "2022-06-01",
+      "title": "Jurassic World Dominion",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 3315
     }
   ]
 }
