@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import MyListPage from "./MyListPage";
 import Search from "./Search";
+import MovieInfo from "./MovieInfo";
 import Footer from "./Footer";
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route exact path="/search">
           <Search apiKey={apiKey} />
+        </Route>
+        <Route exact path="/:id">
+          <MovieInfo apiKey={apiKey} />
         </Route>
       </Switch>
       <Footer></Footer>

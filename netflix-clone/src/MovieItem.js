@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import "./MovieItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,6 +20,7 @@ function MovieItem({
 }) {
   const name = movie.title ? movie.title : movie.name;
   const image = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+  const history = useHistory();
 
   const movieCODES = {
     28: "Action",
@@ -116,7 +118,7 @@ function MovieItem({
 
   function handleMoreInfoClick() {
     //ADD THE POP UP HERE!!!
-    return;
+    history.push(`/${movie.id}`)
   }
 
   const [isLiked, setIsLiked] = useState(false);
