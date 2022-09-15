@@ -40,6 +40,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
           if (!movie.poster_path || !movie.backdrop_path) {
             return;
           }
+          movie = {...movie, watched: false}
           return (
             <MovieItem
               key={movie.id}

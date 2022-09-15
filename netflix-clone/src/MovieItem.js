@@ -9,6 +9,7 @@ import {
   faX,
   faThumbsUp,
   faThumbsDown,
+  faEye
 } from "@fortawesome/free-solid-svg-icons";
 function MovieItem({
   movie,
@@ -138,6 +139,21 @@ function MovieItem({
     return faPlay;
   }
 
+  const [isWatched, setIsWatched] = useState(movie.watched)
+
+  function handleClickWatched () {
+    setIsWatched(!isWatched)
+      fetch(`http://localhost:8000/movies/${movie.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: (JSON.stringify({watched: !isWatched}))
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }
+
   return (
     <div className="movie-poster">
       <img src={image} className="movie-poster-img"></img>
@@ -159,6 +175,9 @@ function MovieItem({
         </button>
         <button className="card-button" onClick={handleLikeClick}>
           <FontAwesomeIcon icon={renderLikeDislike()}></FontAwesomeIcon>
+        </button>
+        <button className={isWatched ? "card-button play-button" : "card-button"} onClick={handleClickWatched}>
+          <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
         </button>
 
         <button
