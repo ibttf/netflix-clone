@@ -2,24 +2,66 @@
   "movies": [
     {
       "adult": false,
-      "backdrop_path": "/GZx3RAiTJAhXOdhLLyCAbqRl11.jpg",
+      "backdrop_path": "/7Y3LdmsZukXhmwxtO0UF95BFBTt.jpg",
       "genre_ids": [
-        80,
-        53,
-        37
+        18,
+        9648,
+        53
       ],
-      "id": 338766,
+      "id": 682507,
       "original_language": "en",
-      "original_title": "Hell or High Water",
-      "overview": "A divorced dad and his ex-con brother resort to a desperate scheme in order to save their family's farm in West Texas.",
-      "popularity": 19.059,
-      "poster_path": "/ljRRxqy2aXIkIBXLmOVifcOR021.jpg",
-      "release_date": "2016-08-11",
-      "title": "Hell or High Water",
+      "original_title": "Where the Crawdads Sing",
+      "overview": "Abandoned by her family, Kya raises herself all alone in the marshes outside of her small town. When her former boyfriend is found dead, Kya is instantly branded by the local townspeople and law enforcement as the prime suspect for his murder.",
+      "popularity": 778.053,
+      "poster_path": "/n1el846gLDXfhOvrRCsyvaAOQWv.jpg",
+      "release_date": "2022-07-15",
+      "title": "Where the Crawdads Sing",
       "video": false,
-      "vote_average": 7.3,
-      "vote_count": 3829,
+      "vote_average": 7.4,
+      "vote_count": 209,
       "watched": false
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4bsz75kSdeVQm9u5aD87ciRpYVW.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "id": 1010821,
+      "original_language": "en",
+      "original_title": "Groot Takes a Bath",
+      "overview": "Everybody needs some alone time to relax and wash up, but things go quite differently when you’re a Flora Colossi toddler.",
+      "popularity": 740.762,
+      "poster_path": "/sN7FJP06TsNNtK9Jr77dc25yI82.jpg",
+      "release_date": "2022-08-10",
+      "title": "Groot Takes a Bath",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 124,
+      "watched": true
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6cpRpfD3isvluFwXDGSiDVyibPJ.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 829560,
+      "original_language": "pl",
+      "original_title": "The Next 365 Days",
+      "overview": "Laura and Massimo's relationship hangs in the balance as they try to overcome trust issues while a tenacious Nacho works to push them apart.",
+      "popularity": 725.261,
+      "poster_path": "/dlyzCeI8wojBsUWdkNdO5AXtmZq.jpg",
+      "release_date": "2022-08-19",
+      "title": "The Next 365 Days",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 421,
+      "watched": true
     }
   ]
 }
