@@ -56,7 +56,6 @@ function MovieList({ link, onAddDeleteClick, ids }) {
               inMyList={false}
               isOutsideButInMyList={ids.includes(movie.id)}
               onAddDeleteClick={onAddDeleteClick}
-              className="MovieItem"
             ></MovieItem>
           );
         })}
