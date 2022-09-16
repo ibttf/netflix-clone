@@ -4,7 +4,6 @@ import "./MovieList.css";
 
 function MovieList({ link, onAddDeleteClick, ids }) {
   const [movieList, setMovieList] = useState([]);
-  const [isMoved, setIsMoved] = useState(false);
 
   useEffect(() => {
     fetch(link)
@@ -34,7 +33,6 @@ function MovieList({ link, onAddDeleteClick, ids }) {
         getComputedStyle(slider).getPropertyValue("--slider-index")
       );
       slider.style.setProperty("--slider-index", sliderIndex + 1);
-      console.log(sliderIndex);
     }
   }
 
