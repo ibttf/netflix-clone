@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import MovieItem from "./MovieItem";
 import "./MovieList.css";
 
 function MyList({ onAddDeleteClick, movies }) {
-  const [isPrev, setIsPrev] = useState(false);
-  const [isNext, setIsNext] = useState(false);
-  const [isMoved, setIsMoved] = useState(false);
-
   function handleSlideClick(e) {
     if (
       e.target.className.includes("left") &&
@@ -27,7 +23,6 @@ function MyList({ onAddDeleteClick, movies }) {
         getComputedStyle(slider).getPropertyValue("--slider-index")
       );
       slider.style.setProperty("--slider-index", sliderIndex + 1);
-      console.log(sliderIndex);
     }
   }
   return (
@@ -35,7 +30,7 @@ function MyList({ onAddDeleteClick, movies }) {
       <div className="handle left-handle" onClick={handleSlideClick}>
         &#8249;
       </div>
-      <div className={isNext ? `slider slider-right` : `slider`}>
+      <div className={`slider`}>
         {movies.map((movie) => {
           if (!movie.poster_path || !movie.backdrop_path) {
             return;
