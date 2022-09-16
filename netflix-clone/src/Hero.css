@@ -3,17 +3,17 @@
 /****************/
 #Hero {
   position: relative;
-  z-index: -1;
+  z-index: 0;
   bottom: 25px;
   color: white;
   background-color: rgb(14, 13, 13);
 }
 .hero-image {
-  min-height: 100%;
   max-width: 100%;
   min-width: 100%;
   overflow-y: hidden;
   position: relative;
+  z-index: -2;
   bottom: 40px;
   z-index: -1;
 }
@@ -21,13 +21,13 @@
 .hero-text {
   position: absolute;
   top: 30%;
+  right: 30%;
 }
 .hero-title {
   padding-left: 2%;
   font-size: 80px;
 }
 .hero-description {
-  margin-right: 50%;
   padding-left: 3%;
   font-family: Arial, sans-serif;
 }

@@ -1,6 +1,6 @@
 import MyMovieItem from "./MyMovieItem";
 import "./MovieGrid.css";
-function MovieGrid({ movieIds }) {
+function MovieGrid({ movieIds, isRecommended }) {
   console.log(movieIds);
   if (movieIds.length) {
     movieIds = movieIds.filter((movieId) => {
@@ -10,10 +10,11 @@ function MovieGrid({ movieIds }) {
       return false;
     });
   }
-  console.log(movieIds);
 
   return (
-    <div className="movie-grid-container">
+    <div
+      className={`movie-grid-container ${isRecommended ? "recommended" : ""}`}
+    >
       {movieIds.length > 0 ? (
         movieIds.map((movieId) => (
           <MyMovieItem key={movieId.id} movieId={{ ...movieId }} />

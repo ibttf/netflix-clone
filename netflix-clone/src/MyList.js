@@ -3,7 +3,7 @@ import MovieItem from "./MovieItem";
 import "./MovieList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLessThan, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
-function MyList({ onAddDeleteClick, movies, ids }) {
+function MyList({ onAddDeleteClick, movies }) {
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
 
@@ -40,6 +40,7 @@ function MyList({ onAddDeleteClick, movies, ids }) {
               inMyList={true}
               isOutsideButInMyList={false}
               onAddDeleteClick={onAddDeleteClick}
+              className="MovieItem"
             ></MovieItem>
           );
         })}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./MovieItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,7 +10,7 @@ import {
   faX,
   faThumbsUp,
   faThumbsDown,
-  faEye
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 function MovieItem({
   movie,
@@ -118,7 +118,8 @@ function MovieItem({
 
   function handleMoreInfoClick() {
     //ADD THE POP UP HERE!!!
-    history.push(`/${movie.id}`)
+    console.log(history);
+    history.replace(`/${movie.id}`);
   }
 
   const [isLiked, setIsLiked] = useState(false);
@@ -141,19 +142,19 @@ function MovieItem({
     return faPlay;
   }
 
-  const [isWatched, setIsWatched] = useState(movie.watched)
+  const [isWatched, setIsWatched] = useState(movie.watched);
 
-  function handleClickWatched () {
-    setIsWatched(!isWatched)
-      fetch(`http://localhost:8000/movies/${movie.id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: (JSON.stringify({watched: !isWatched}))
-      })
-      .then(res => res.json())
-      .then(data => console.log(data))
+  function handleClickWatched() {
+    setIsWatched(!isWatched);
+    fetch(`http://localhost:8000/movies/${movie.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ watched: !isWatched }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }
 
   return (
@@ -178,7 +179,10 @@ function MovieItem({
         <button className="card-button" onClick={handleLikeClick}>
           <FontAwesomeIcon icon={renderLikeDislike()}></FontAwesomeIcon>
         </button>
-        <button className={isWatched ? "card-button play-button" : "card-button"} onClick={handleClickWatched}>
+        <button
+          className={isWatched ? "card-button play-button" : "card-button"}
+          onClick={handleClickWatched}
+        >
           <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
         </button>
 

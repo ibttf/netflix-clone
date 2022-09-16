@@ -3,7 +3,7 @@ import MovieItem from "./MovieItem";
 import "./MovieList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLessThan, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
-function MovieList({ link, onAddDeleteClick, myList, ids }) {
+function MovieList({ link, onAddDeleteClick, ids }) {
   const [movieList, setMovieList] = useState([]);
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
@@ -40,7 +40,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
           if (!movie.poster_path || !movie.backdrop_path) {
             return;
           }
-          movie = {...movie, watched: false}
+          movie = { ...movie, watched: false };
           return (
             <MovieItem
               key={movie.id}
@@ -48,6 +48,7 @@ function MovieList({ link, onAddDeleteClick, myList, ids }) {
               inMyList={false}
               isOutsideButInMyList={ids.includes(movie.id)}
               onAddDeleteClick={onAddDeleteClick}
+              className="MovieItem"
             ></MovieItem>
           );
         })}

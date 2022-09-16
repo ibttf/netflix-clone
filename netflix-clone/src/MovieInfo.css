@@ -1,0 +1,67 @@
+.hero-image {
+  opacity: 20%;
+}
+.main-hero-content {
+  overflow: hidden;
+}
+.hero-poster {
+  height: 80vh;
+  position: absolute;
+  z-index: 100;
+  top: 14vh;
+  left: 10%;
+
+  border-radius: 10px;
+}
+.more-info {
+  position: absolute !important;
+  left: 45%;
+  top: 3%;
+  width: 50%;
+  overflow: hidden;
+}
+.hero-title {
+  margin-bottom: 2%;
+}
+.genres-container {
+  display: flex !important;
+}
+.hero-genre {
+  border: solid 1px white;
+  text-align: center;
+  background-color: rgb(14, 13, 13);
+  min-width: 10%;
+  padding: 2% 2% 2% 2%;
+  margin: -1% 1%;
+  border-radius: 25px;
+}
+.hero-description {
+  font-weight: normal;
+  width: 90%;
+}
+.cast-name-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.cast-actors-container {
+  display: flex;
+  line-height: 0;
+}
+.cast-actor {
+  max-height: 250px;
+  max-width: 200px;
+  margin: 0 2%;
+  text-align: center;
+}
+.actor-img {
+  height: 150px;
+}
+.actor-title {
+  font-weight: normal;
+}
+.recommended-movies-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding-left: 4%;
+  margin-bottom: 0;
+}
