@@ -29,6 +29,14 @@ Upon clicking on the "more info" dropdown of a movie, you are redirected to a se
 ![image](https://user-images.githubusercontent.com/60560932/190565285-13a40d41-3b07-421e-aade-4bf00e3415e0.png)
 ![image](https://user-images.githubusercontent.com/60560932/190565319-717dbe59-2a57-4e3a-be94-b3bafa160f19.png)
 
+
+#How to Run
+This app requires you to install dependencies and run a local server. To view the functionality, clone this repository to your local computer.
+```
+$ npm install json-server
+$ cd netflix-clone
+$ npx json-server --watch db.json --port 8000
+```
 # Authors
 •Roy Lee
 
