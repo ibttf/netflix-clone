@@ -1,8 +1,44 @@
+.movie-list-container {
+  display: flex;
+}
+.movie-list-container:hover .handle {
+  opacity: 100%;
+}
+
+.handle {
+  text-align: center;
+  width: 55px;
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(14, 13, 13);
+  transition: 200ms all;
+  line-height: 170px;
+  opacity: 0%;
+}
+
+.handle:hover {
+  opacity: 70%;
+  background-color: rgb(14, 13, 13);
+}
+
+.left-handle {
+  left: 0;
+}
+.right-handle {
+  right: 0;
+}
+
 .slider {
   display: flex;
   padding: 0px 55px;
-  height: 200px;
+  height: 160px;
   transition: 0.3s;
+  max-height: fit-content;
 }
 
 .slider-right {

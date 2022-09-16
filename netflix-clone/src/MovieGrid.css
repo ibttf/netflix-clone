@@ -5,3 +5,11 @@
   padding-left: 3%;
   padding-right: 2%;
 }
+.recommended {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  height: 350px;
+}
+.recommended::-webkit-scrollbar {
+  display: none;
+}

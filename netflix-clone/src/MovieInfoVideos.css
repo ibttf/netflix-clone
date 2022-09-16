@@ -1,0 +1,15 @@
+.movie-videos-container {
+  height: 100%;
+
+  text-align: center;
+}
+.movie-video-title {
+  text-align: left !important;
+  padding-left: 22%;
+}
+.movie-info-trailer {
+  width: 100vh;
+  height: 65vh;
+  padding: 0 5% 5% 0;
+  border: none;
+}
