@@ -1,30 +1,39 @@
 import React, { useState } from "react";
 import MovieItem from "./MovieItem";
 import "./MovieList.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLessThan, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
+
 function MyList({ onAddDeleteClick, movies }) {
   const [isPrev, setIsPrev] = useState(false);
   const [isNext, setIsNext] = useState(false);
+  const [isMoved, setIsMoved] = useState(false);
 
-  function handlePrevClick() {
-    if (isNext) {
-      setIsNext(false);
-      setIsPrev(true);
+  function handleSlideClick(e) {
+    if (
+      e.target.className.includes("left") &&
+      parseInt(
+        getComputedStyle(e.target.nextSibling).getPropertyValue(
+          "--slider-index"
+        )
+      )
+    ) {
+      const slider = e.target.nextSibling;
+      const sliderIndex = parseInt(
+        getComputedStyle(slider).getPropertyValue("--slider-index")
+      );
+      slider.style.setProperty("--slider-index", sliderIndex - 1);
+    } else if (e.target.className.includes("right")) {
+      const slider = e.target.previousSibling;
+      const sliderIndex = parseInt(
+        getComputedStyle(slider).getPropertyValue("--slider-index")
+      );
+      slider.style.setProperty("--slider-index", sliderIndex + 1);
+      console.log(sliderIndex);
     }
   }
-
-  function handleNextClick() {
-    if (isPrev) {
-      setIsPrev(false);
-    }
-    setIsNext(true);
-  }
-
   return (
     <div className="movie-list-container">
-      <div className="handle left-handle" onClick={handlePrevClick}>
-        <FontAwesomeIcon icon={faLessThan} />
+      <div className="handle left-handle" onClick={handleSlideClick}>
+        &#8249;
       </div>
       <div className={isNext ? `slider slider-right` : `slider`}>
         {movies.map((movie) => {
@@ -45,8 +54,8 @@ function MyList({ onAddDeleteClick, movies }) {
           );
         })}
       </div>
-      <div className="handle right-handle" onClick={handleNextClick}>
-        <FontAwesomeIcon icon={faGreaterThan} />
+      <div className="handle right-handle" onClick={handleSlideClick}>
+        &#8250;
       </div>
     </div>
   );
